@@ -9,7 +9,7 @@ body {
     grid-template-rows: 500px 80px 200px 
 }
 
-.gridContainer:after{
+/* .gridContainer:after{
     content: "";
     background: linear-gradient(
         45deg,
@@ -45,8 +45,8 @@ body {
     }
     100% {
         background-position: 0 0;
-    } 
-}
+    } */
+/* } */
 
 
 .playerBoard, .computerBoard {
@@ -174,7 +174,7 @@ body {
 }
 
 .addPoleBtn button:hover, .resetBtn:hover {
-    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(0, 0, 0, 0.5), .125rem .125rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(0, 0, 0, 0.5), .125rem .125rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .addPoleBtn button:active, .resetBtn:active {
