@@ -1,4 +1,4 @@
-import {myTurn, janusz, januszBoard, myShips , compBoard, compShips, ifGameFinish} from "./game.js"
+import {myTurn, janusz, januszBoard, myShips , compBoard, compShips} from "./game.js"
 import ship from "../factories/ship.js"
 import generateCompShips from "./compShipsGenarated"
 
@@ -9,6 +9,48 @@ let add1pole = document.querySelector('.add1pole')
 let add2pole = document.querySelector('.add2pole')
 let add3pole = document.querySelector('.add3pole')
 let add4pole = document.querySelector('.add4pole')
+
+
+let tellUs = document.querySelector('.gameOver')
+
+let howManyShipss=document.querySelector('.howManyShips')
+let oneField = document.querySelector('.oneField')
+let twoFields = document.querySelector('.twoFields')
+let threeFields = document.querySelector('.threeFields')
+let fourFields = document.querySelector('.fourFields')
+
+let start = false
+
+function howManyShips(){
+    oneField.textContent=`1-field ships to place: ${oneFieldToPlace}`
+    twoFields.textContent=`2-fields ships to place: ${twoFieldsToPlace}`
+    threeFields.textContent=`3-fields ships to place: ${threeFieldsToPlace}`
+    fourFields.textContent=`4-fields ships to place: ${fourFieldsToPlace}`
+    if(oneFieldToPlace==0 && twoFieldsToPlace==0 && threeFieldsToPlace==0 && fourFieldsToPlace==0 && start==false){
+        howManyShipss.textContent='Start with first move!'
+        start=true
+    }
+    else if (start==true){
+        howManyShipss.textContent=''
+    }
+}
+
+
+
+
+function ifGameFinish(){
+    if(januszBoard.AllShipsSunk()==true && fourFieldsToPlace==0){
+        tellUs.textContent='Game Over! Computer won!'
+    }
+    else if(compBoard.AllShipsSunk()==true && fourFieldsToPlace==0){
+        tellUs.textContent='Game Over! You won!'
+    }
+}
+
+
+
+
+
 
 function createComputerBoard() {
     for (let i=0; i<=99; i++){
@@ -329,6 +371,7 @@ function createPlayerBoard() {
                     fourFieldsToPlace-=1
                 }
             }
+            howManyShips()
         })
         if (januszBoard.board[i]=='missed'){
             pixel.classList.add('missed')
@@ -352,7 +395,8 @@ function createPlayerBoard() {
             pixel.classList.add('sunk')
         }
     }
-    ifGameFinish()    
+    ifGameFinish()  
+    howManyShips()  
 }
 
 add1pole.addEventListener('click', () => {

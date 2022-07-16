@@ -25,7 +25,7 @@ const gameboard = () => {
     }
 
     function AllShipsSunk(){
-        return board.every(x => x == 'missed' || x == 'HIT!' || x == false)
+        return board.every(x => x == 'missed' || x == 'HIT!' || x == false || x == 'sunk')
     }
 
     return {board, myShips, placeShips, receiveAttack, AllShipsSunk}
