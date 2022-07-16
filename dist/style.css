@@ -26,22 +26,21 @@ body {
     position: absolute;
     top: -2px;
     left: -2px;
-    background-size: 400%;
+    background-size: 800%;
     z-index: -1;
     filter: blur(5px);
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing-button-85 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
+    animation: glowing-button-85 200s linear infinite ;
+    transition: opacity 0.2s ease-in-out;
 }
 @keyframes glowing-button-85 {
     0% {
         background-position: 0 0;
     }
     50% {
-        background-position: 200% 0;
+        background-position: 100% 0;
     }
     100% {
         background-position: 0 0;
@@ -54,13 +53,6 @@ body {
     grid-template-columns:  repeat(10, 50px);
     grid-template-rows:  repeat(10, 50px);
 }
-
-
-
-
-
-
-
 .vs, .yourGrid, .compGrid {
     display: flex;
     justify-content: center;
@@ -144,12 +136,12 @@ body {
     -webkit-filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing-button-85 20s linear infinite;
+    animation: glowing-button-84 20s linear infinite;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
 }
 
-@keyframes glowing-button-85 {
+@keyframes glowing-button-84 {
     0% {
         background-position: 0 0;
     }
